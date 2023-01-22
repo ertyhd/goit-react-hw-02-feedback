@@ -47,7 +47,7 @@ class App extends Component {
         <Section title="Please leave feedback">
           <MainMenu options={options} actionFeedback={this.handleFeedback} />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           <Statistics
             good={good}
             neutral={neutral}
