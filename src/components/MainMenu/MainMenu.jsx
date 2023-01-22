@@ -9,7 +9,7 @@ const FeedbackOptions = ({ options, actionFeedback }) => (
         className={buttonsCss.button}
         type="button"
         data-feedback={option}
-        onClick={actionFeedback}
+        onClick={() => actionFeedback(option)}
         key={option}
       >
         {option}

@@ -25,11 +25,17 @@ class App extends Component {
     return totalFeedback ? Math.round((good / totalFeedback) * 100) : 0;
   };
 
-  handleFeedback = ({ target }) => {
-    const { feedback } = target.dataset;
-    this.setState(prevState => {
-      return { [feedback]: prevState[feedback] + 1 };
-    });
+  // handleFeedback = ({ target }) => {
+  //   const { feedback } = target.dataset;
+  //   this.setState(prevState => {
+  //     return { [feedback]: prevState[feedback] + 1 };
+  //   });
+  // };
+
+  handleFeedback = feedback => {
+    this.setState(prevState => ({
+      [feedback]: prevState[feedback] + 1,
+    }));
   };
 
   render() {
@@ -38,7 +44,7 @@ class App extends Component {
     const positiveFeedback = this.countPositiveFeedbackPercentage();
     return (
       <>
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <MainMenu options={options} actionFeedback={this.handleFeedback} />
         </Section>
         <Section title={'Statistics'}>
